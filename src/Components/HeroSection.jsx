@@ -1,34 +1,47 @@
-import React from "react";
-import Slider from "react-slick";
+import { useRef, useEffect } from 'react';
+import { register } from 'swiper/element/bundle';
+import 'swiper/css';
+import laptop from "../assets/laptop.jpg";
+import iphone from "../assets/iphone.jpg";
+import headphone from "../assets/headphone.jpg";
 
-export default function SimpleSlider() {
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
+// Register Swiper
+register();
+
+export const ImageSlider = () => {
+  const swiperElRef = useRef(null);
+
+  useEffect(() => {
+    if (swiperElRef.current) {
+      swiperElRef.current.addEventListener('swiperprogress', (e) => {
+        const [swiper, progress] = e.detail;
+        console.log(progress);
+      });
+
+      swiperElRef.current.addEventListener('swiperslidechange', (e) => {
+        console.log('slide changed');
+      });
+    }
+  }, []);
+
   return (
-    <Slider {...settings}>
-      <div>
-        <h3>1</h3>
+    <div className='flex justify-start   bg-black'>
+      <div className=' w-[15%] bg-slate-400'>
+        <h1>Category</h1>
       </div>
-      <div>
-        <h3>2</h3>
+    <swiper-container className="mx-auto"
+      ref={swiperElRef}
+      slides-per-view="1"
+      navigation="false"
+      pagination="true"
+      autoplay={{
+        delay: 3000, // Time in milliseconds between automatic slide changes
+        disableOnInteraction: false, // Autoplay will not stop when user interacts
+      }}
+      loop="true" // Adds looping for continuous autoplay
+      >
+      <swiper-slide><img className='h-[70vh] w-[75%] ' src={laptop} alt="Laptop" /></swiper-slide>
+    </swiper-container>
       </div>
-      <div>
-        <h3>3</h3>
-      </div>
-      <div>
-        <h3>4</h3>
-      </div>
-      <div>
-        <h3>5</h3>
-      </div>
-      <div>
-        <h3>6</h3>
-      </div>
-    </Slider>
   );
-}
+};
