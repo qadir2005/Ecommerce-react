@@ -10,6 +10,7 @@ import SignUp from './pages/SignUp';
 import PageNotFound from './pages/PageNotFound';
 import Cart from './pages/Cart';
 import Favorite from './pages/Favorite';
+import Products from './pages/Products';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path='*' element={<PageNotFound />} />
         <Route path='/cart' element={<Cart />} />
         <Route path="/favorite" element={<Favorite />} />
+        <Route path="/product" element={<Products />} />
       </Routes>
 
     </Router>

@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 function Navbar() {
 const isLoggedIn = false;
   return (
-    <div className='flex justify-between shadow-md border-black px-[3%] bg-[#fbfaf4] h-16 '>
+    <div className='flex justify-between shadow-md border-black px-[3%] max-w-[1100] bg-[#fbfaf4] h-16 '>
       {/* for Mobile */}
         <div className='flex items-center sm'>
         <img src={logo} className='  h-12' alt="loog" />
@@ -19,6 +19,7 @@ const isLoggedIn = false;
         <ul className='flex items-center gap-8'>
             <li className='cursor-pointer'><Link to={"/"}>Home</Link>  </li>
             <li className='cursor-pointer'><Link to={"about"}>About</Link> </li>
+            <li className='cursor-pointer'><Link to={"product"}>Prodcucts</Link> </li>
             <li className='cursor-pointer'><Link to={"contact"}>Contact Us </Link></li>
             <li className='cursor-pointer'><Link to={"signup"}> Sign up</Link></li>
         </ul>
