@@ -29,6 +29,7 @@ function App() {
         <Route path="/favorite" element={<Favorite />} />
         <Route path="/product" element={<Products />} />
         <Route path='product-detail/:id' element={<ProductDetail />} />
+        <Route path='product/product-detail/:id' element={<ProductDetail />} />
       </Routes>
 
     </Router>
