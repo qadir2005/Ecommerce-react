@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Navbar from './Components/Navbar';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useParams } from "react-router-dom";
 import Home from './pages/Home';
 import Offer from './Components/Offer';
 import About from './pages/About';
@@ -11,6 +11,7 @@ import PageNotFound from './pages/PageNotFound';
 import Cart from './pages/Cart';
 import Favorite from './pages/Favorite';
 import Products from './pages/Products';
+import ProductDetail from './pages/ProductDetail';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path='/cart' element={<Cart />} />
         <Route path="/favorite" element={<Favorite />} />
         <Route path="/product" element={<Products />} />
+        <Route path='product-detail/:id' element={<ProductDetail />} />
       </Routes>
 
     </Router>

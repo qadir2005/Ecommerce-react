@@ -30,8 +30,8 @@ export const ImageSlider = () => {
     Category
     </div>
     <div className='bg-slate-600 w-[65%]'>
-Image
-    </div>
+<img src={iphone} alt="" />
+    </div>  
   </div>
 
   );
